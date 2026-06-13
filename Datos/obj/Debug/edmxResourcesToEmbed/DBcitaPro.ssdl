@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBcitaproModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="IdCita" />
+    </Key>
+    <Property Name="IdCita" Type="int" Nullable="false" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdHorario" Type="int" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="256" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="Idusuario" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Consultor">
+    <Key>
+      <PropertyRef Name="IdConsultor" />
+    </Key>
+    <Property Name="IdConsultor" Type="int" Nullable="false" />
+    <Property Name="Idusuario" Type="int" Nullable="false" />
+    <Property Name="IdRubro" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="Monto" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="NombreEstado" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="EstadoHorario">
+    <Key>
+      <PropertyRef Name="IdEstadoHorario" />
+    </Key>
+    <Property Name="IdEstadoHorario" Type="int" Nullable="false" />
+    <Property Name="NombreEstado" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="HorarioConsultor">
+    <Key>
+      <PropertyRef Name="IdHorario" />
+    </Key>
+    <Property Name="IdHorario" Type="int" Nullable="false" />
+    <Property Name="IdConsultor" Type="int" Nullable="false" />
+    <Property Name="IdEstadoHorario" Type="int" Nullable="false" />
+    <Property Name="FechaHoraInicio" Type="datetime" />
+    <Property Name="FechaHoraFin" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Rubro">
+    <Key>
+      <PropertyRef Name="IdRubro" />
+    </Key>
+    <Property Name="IdRubro" Type="int" Nullable="false" />
+    <Property Name="NombreRubro" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Idtipo" />
+    </Key>
+    <Property Name="Idtipo" Type="int" Nullable="false" />
+    <Property Name="NombreTipoUsuario" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Idusuario" />
+    </Key>
+    <Property Name="Idusuario" Type="int" Nullable="false" />
+    <Property Name="Idtipo" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="256" />
+    <Property Name="Dni" Type="varchar" MaxLength="8" />
+    <Property Name="Sexo" Type="varchar" MaxLength="256" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="256" />
+    <Property Name="Telefono" Type="varchar" MaxLength="9" />
+    <Property Name="Correo" Type="varchar" MaxLength="256" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedAt" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Cliente_Cita">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultor_Horario">
+    <End Role="Consultor" Type="Self.Consultor" Multiplicity="1" />
+    <End Role="HorarioConsultor" Type="Self.HorarioConsultor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consultor">
+        <PropertyRef Name="IdConsultor" />
+      </Principal>
+      <Dependent Role="HorarioConsultor">
+        <PropertyRef Name="IdConsultor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_Cita">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EstadoHorario_Horario">
+    <End Role="EstadoHorario" Type="Self.EstadoHorario" Multiplicity="1" />
+    <End Role="HorarioConsultor" Type="Self.HorarioConsultor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoHorario">
+        <PropertyRef Name="IdEstadoHorario" />
+      </Principal>
+      <Dependent Role="HorarioConsultor">
+        <PropertyRef Name="IdEstadoHorario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Horario_Cita">
+    <End Role="HorarioConsultor" Type="Self.HorarioConsultor" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HorarioConsultor">
+        <PropertyRef Name="IdHorario" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="IdHorario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rubro_Consultor">
+    <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+    <End Role="Consultor" Type="Self.Consultor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rubro">
+        <PropertyRef Name="IdRubro" />
+      </Principal>
+      <Dependent Role="Consultor">
+        <PropertyRef Name="IdRubro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoUsuario_Usuario">
+    <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="Idtipo" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Idtipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Cliente">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Idusuario" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="Idusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Consultor">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Consultor" Type="Self.Consultor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Idusuario" />
+      </Principal>
+      <Dependent Role="Consultor">
+        <PropertyRef Name="Idusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBcitaproModelStoreContainer">
+    <EntitySet Name="Cita" EntityType="Self.Cita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consultor" EntityType="Self.Consultor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoHorario" EntityType="Self.EstadoHorario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HorarioConsultor" EntityType="Self.HorarioConsultor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rubro" EntityType="Self.Rubro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cliente_Cita" Association="Self.FK_Cliente_Cita">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultor_Horario" Association="Self.FK_Consultor_Horario">
+      <End Role="Consultor" EntitySet="Consultor" />
+      <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Cita" Association="Self.FK_Estado_Cita">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EstadoHorario_Horario" Association="Self.FK_EstadoHorario_Horario">
+      <End Role="EstadoHorario" EntitySet="EstadoHorario" />
+      <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Horario_Cita" Association="Self.FK_Horario_Cita">
+      <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rubro_Consultor" Association="Self.FK_Rubro_Consultor">
+      <End Role="Rubro" EntitySet="Rubro" />
+      <End Role="Consultor" EntitySet="Consultor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoUsuario_Usuario" Association="Self.FK_TipoUsuario_Usuario">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Cliente" Association="Self.FK_Usuario_Cliente">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Consultor" Association="Self.FK_Usuario_Consultor">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Consultor" EntitySet="Consultor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

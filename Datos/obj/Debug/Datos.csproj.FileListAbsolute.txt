@@ -1,0 +1,12 @@
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\Datos.dll.config
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\Datos.dll
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\Datos.pdb
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\EntityFramework.dll
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\EntityFramework.SqlServer.dll
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\EntityFramework.xml
+M:\visual estudio moradito\CitaPro\Datos\bin\Debug\EntityFramework.SqlServer.xml
+M:\visual estudio moradito\CitaPro\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+M:\visual estudio moradito\CitaPro\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+M:\visual estudio moradito\CitaPro\Datos\obj\Debug\Datos.csproj.Up2Date
+M:\visual estudio moradito\CitaPro\Datos\obj\Debug\Datos.dll
+M:\visual estudio moradito\CitaPro\Datos\obj\Debug\Datos.pdb
