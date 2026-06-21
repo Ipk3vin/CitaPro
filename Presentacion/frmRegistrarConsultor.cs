@@ -65,14 +65,21 @@ namespace Presentacion
 
             Consultor objConsultor = new Consultor
             {
-                IdRubro = Convert.ToInt32(cboRubro.SelectedValue),
+                IdRubro = 2,
                 Descripcion = txtDescripcion.Text,
                 Monto = monto
             };
-
-            string mensaje = objNegocio.RegistrarConsultor(objUsuario, objConsultor, txtConfirmarContrasena.Text, idUsuarioSesion);
+            
+            string mensaje = objNegocio.RegistrarConsultor(objUsuario, objConsultor, idUsuarioSesion);
             MessageBox.Show(mensaje);
             ActualizarDgv();
+
+
+            // Dentro de tu btnRegistrar_Click
+            string respuesta = objNegocio.RegistrarConsultor(objUsuario, objConsultor, idUsuarioSesion);
+
+            // Aquí sí puedes usar MessageBox porque estás en la capa de Presentación
+            MessageBox.Show(respuesta);
         }
     }
 }

@@ -1,0 +1,156 @@
+-- 1. Crear la base de datos
+CREATE DATABASE CitaPro;
+GO
+
+-- 2. Seleccionar la base de datos para trabajar en ella
+USE CitaPro;
+GO
+
+
+CREATE TABLE Cita
+(
+  IdCita      INT          NOT NULL,
+  IdCliente   INT          NOT NULL,
+  IdHorario   INT          NOT NULL,
+  IdEstado    INT          NOT NULL,
+  Monto       DOUBLE       NULL    ,
+  Descripcion VARCHAR(256) NULL    ,
+  CreatedBy   INT          NULL    ,
+  CreatedAt   DATETIME     NULL    ,
+  ModifiedBy  INT          NULL    ,
+  ModifiedAt  DATETIME     NULL    ,
+  PRIMARY KEY (IdCita)
+);
+
+CREATE TABLE Cliente
+(
+  IdCliente  INT      NOT NULL,
+  Idusuario  INT      NOT NULL,
+  CreatedBy  INT      NULL    ,
+  CreatedAt  DATETIME NULL    ,
+  ModifiedBy INT      NULL    ,
+  ModifiedAt DATETIME NULL    ,
+  PRIMARY KEY (IdCliente)
+);
+
+CREATE TABLE Consultor
+(
+  IdConsultor INT          NOT NULL,
+  Idusuario   INT          NOT NULL,
+  IdRubro     INT          NOT NULL,
+  Descripcion VARCHAR(256) NULL    ,
+  CreatedBy   INT          NULL    ,
+  CreatedAt   DATETIME     NULL    ,
+  ModifiedBy  INT          NULL    ,
+  ModifiedAt  DATETIME     NULL    ,
+  Descripcion VARCHAR(300) NULL    ,
+  Monto       DOUBLE       NULL    ,
+  Estado      VARCHAR(20)  NULL    ,
+  PRIMARY KEY (IdConsultor)
+);
+
+CREATE TABLE Estado
+(
+  IdEstado     INT          NOT NULL,
+  NombreEstado VARCHAR(256) NULL    ,
+  PRIMARY KEY (IdEstado)
+);
+
+CREATE TABLE EstadoHorario
+(
+  IdEstadoHorario INT          NOT NULL,
+  NombreEstado    VARCHAR(256) NULL    ,
+  PRIMARY KEY (IdEstadoHorario)
+);
+
+CREATE TABLE HorarioConsultor
+(
+  IdHorario       INT      NOT NULL,
+  IdConsultor     INT      NOT NULL,
+  IdEstadoHorario INT      NOT NULL,
+  FechaHoraInicio DATETIME NULL    ,
+  FechaHoraFin    DATETIME NULL    ,
+  CreatedBy       INT      NULL    ,
+  CreatedAt       DATETIME NULL    ,
+  ModifiedBy      INT      NULL    ,
+  ModifiedAt      DATETIME NULL    ,
+  PRIMARY KEY (IdHorario)
+);
+
+CREATE TABLE Rubro
+(
+  IdRubro     INT          NOT NULL,
+  NombreRubro VARCHAR(256) NULL    ,
+  PRIMARY KEY (IdRubro)
+);
+
+CREATE TABLE TipoUsuario
+(
+  Idtipo            INT          NOT NULL,
+  NombreTipoUsuario VARCHAR(100) NULL    ,
+  PRIMARY KEY (Idtipo)
+);
+
+CREATE TABLE Usuario
+(
+  Idusuario  INT          NOT NULL,
+  Idtipo     INT          NOT NULL,
+  Nombre     VARCHAR(256) NULL    ,
+  Dni        VARCHAR(8)   NULL    ,
+  Sexo       VARCHAR(256) NULL    ,
+  Contraseña VARCHAR(256) NULL    ,
+  Telefono   VARCHAR(9)   NULL    ,
+  Correo     VARCHAR(256) NULL    ,
+  CreatedBy  INT          NULL    ,
+  CreatedAt  DATETIME     NULL    ,
+  ModifiedBy INT          NULL    ,
+  ModifiedAt DATETIME     NULL    ,
+  PRIMARY KEY (Idusuario)
+);
+
+ALTER TABLE Usuario
+  ADD CONSTRAINT FK_TipoUsuario_TO_Usuario
+    FOREIGN KEY (Idtipo)
+    REFERENCES TipoUsuario (Idtipo);
+
+ALTER TABLE Consultor
+  ADD CONSTRAINT FK_Usuario_TO_Consultor
+    FOREIGN KEY (Idusuario)
+    REFERENCES Usuario (Idusuario);
+
+ALTER TABLE Cliente
+  ADD CONSTRAINT FK_Usuario_TO_Cliente
+    FOREIGN KEY (Idusuario)
+    REFERENCES Usuario (Idusuario);
+
+ALTER TABLE Cita
+  ADD CONSTRAINT FK_Cliente_TO_Cita
+    FOREIGN KEY (IdCliente)
+    REFERENCES Cliente (IdCliente);
+
+ALTER TABLE Cita
+  ADD CONSTRAINT FK_HorarioConsultor_TO_Cita
+    FOREIGN KEY (IdHorario)
+    REFERENCES HorarioConsultor (IdHorario);
+
+
+
+ALTER TABLE Consultor
+  ADD CONSTRAINT FK_Rubro_TO_Consultor
+    FOREIGN KEY (IdRubro)
+    REFERENCES Rubro (IdRubro);
+
+ALTER TABLE Cita
+  ADD CONSTRAINT FK_Estado_TO_Cita
+    FOREIGN KEY (IdEstado)
+    REFERENCES Estado (IdEstado);
+
+ALTER TABLE HorarioConsultor
+  ADD CONSTRAINT FK_EstadoHorario_TO_HorarioConsultor
+    FOREIGN KEY (IdEstadoHorario)
+    REFERENCES EstadoHorario (IdEstadoHorario);
+
+ALTER TABLE HorarioConsultor
+  ADD CONSTRAINT FK_Consultor_TO_HorarioConsultor
+    FOREIGN KEY (IdConsultor)
+    REFERENCES Consultor (IdConsultor);

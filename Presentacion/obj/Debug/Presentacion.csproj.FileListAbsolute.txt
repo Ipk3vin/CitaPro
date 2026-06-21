@@ -1,3 +1,10 @@
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmMenuAdministrador.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmRegistrarConsultor.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\Presentacion.exe.config
 M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\Presentacion.exe
 M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\Presentacion.pdb
@@ -11,13 +18,6 @@ M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\Negocio.pdb
 M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\Negocio.dll.config
 M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\EntityFramework.xml
 M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\EntityFramework.SqlServer.xml
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmLogin.resources
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmMenuAdministrador.resources
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmRegistrarConsultor.resources
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
-M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
 M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.exe
 M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.pdb

@@ -22,7 +22,7 @@ namespace Presentacion
         private void btnRegistrarConsultor_Click(object sender, EventArgs e)
         {
             frmRegistrarConsultor frm = new frmRegistrarConsultor(idUsuarioSesion);
-            frm.ShowDialog();
+            frm.Show();
         }
     }
 }

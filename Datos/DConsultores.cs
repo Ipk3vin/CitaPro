@@ -8,43 +8,53 @@ namespace Datos
 {
     public class DConsultores
     {
-        // Registrar consultor
+
         public string RegistrarConsultor(Usuario objUsuario, Consultor objConsultor, int idUsuarioSesion)
         {
             using (var contexto = new DBcitaproEntities())
             {
-                using (var transaccion = contexto.Database.BeginTransaction())
+                try
                 {
-                    try
+                    // 1. CONFIGURAR DATOS DEL USUARIO
+                    objUsuario.CreatedBy = idUsuarioSesion;
+                    objUsuario.CreatedAt = DateTime.Now;
+
+                    // Debes asignar el Idtipo, ya que es obligatorio (N-N) en tu BD
+                    // Cambia el 2 por el ID real que corresponda a "Consultor" en tu tabla TipoUsuario
+                    objUsuario.Idtipo = 2;
+
+                    contexto.Usuario.Add(objUsuario);
+                    contexto.SaveChanges(); // El ID se genera automáticamente aquí
+
+                    // 2. CONFIGURAR DATOS DEL CONSULTOR
+                    // Usamos el Idusuario recién generado
+                    objConsultor.Idusuario = objUsuario.Idusuario;
+                    objConsultor.Estado = "Activo";
+                    objConsultor.CreatedBy = idUsuarioSesion;
+                    objConsultor.CreatedAt = DateTime.Now;
+
+                    // Asegúrate de que IdRubro ya viene cargado desde el formulario (cboRubro)
+                    contexto.Consultor.Add(objConsultor);
+
+                    contexto.SaveChanges(); // Guardamos el consultor vinculado al usuario
+
+                    return "Consultor registrado correctamente";
+                }
+                catch (Exception ex)
+                {
+                    // Vamos a buscar en todas las capas de la excepción
+                    Exception errorActual = ex;
+                    while (errorActual.InnerException != null)
                     {
-                        // Asignar auditoría
-                        objUsuario.CreatedBy = idUsuarioSesion;
-                        objUsuario.CreatedAt = DateTime.Now;
-
-                        contexto.Usuario.Add(objUsuario);
-                        contexto.SaveChanges(); // ID autogenerado por SQL Server
-
-                        objConsultor.Idusuario = objUsuario.Idusuario;
-                        objConsultor.Estado = "Activo";
-                        objConsultor.CreatedBy = idUsuarioSesion;
-                        objConsultor.CreatedAt = DateTime.Now;
-
-                        contexto.Consultor.Add(objConsultor);
-                        contexto.SaveChanges();
-
-                        transaccion.Commit();
-                        return "Consultor registrado correctamente";
+                        errorActual = errorActual.InnerException;
                     }
-                    catch (Exception ex)
-                    {
-                        transaccion.Rollback();
-                        return "Error al registrar consultor: " + ex.Message;
-                    }
+
+                    // Ahora 'errorActual' tiene el mensaje real, incluso si es muy profundo
+                    return "Error real: " + errorActual.Message;
                 }
             }
         }
 
-        // Listar consultores para DataGridView
         public List<ConsultorVista> ListarConsultores()
         {
             using (var contexto = new DBcitaproEntities())
@@ -70,7 +80,6 @@ namespace Datos
             }
         }
 
-        // Listar rubros
         public List<Rubro> ListarRubros()
         {
             using (var contexto = new DBcitaproEntities())
@@ -78,9 +87,6 @@ namespace Datos
                 return contexto.Rubro.ToList();
             }
         }
-
-
-        // Clase para mostrar datos en DataGridView
 
     } 
 }

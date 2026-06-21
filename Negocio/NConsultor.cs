@@ -12,17 +12,8 @@ namespace Negocio
     {
         DConsultores objDatos = new DConsultores();
 
-        public string RegistrarConsultor(Usuario objUsuario, Consultor objConsultor, string confirmarContrasena, int idUsuarioSesion)
+        public string RegistrarConsultor(Usuario objUsuario, Consultor objConsultor, int idUsuarioSesion)
         {
-            if (string.IsNullOrWhiteSpace(objUsuario.Nombre))
-                return "Debe ingresar el nombre";
-
-            if (objUsuario.Contraseña != confirmarContrasena)
-                return "Las contraseñas no coinciden";
-
-            if (objConsultor.IdRubro <= 0)
-                return "Debe seleccionar un rubro";
-
             return objDatos.RegistrarConsultor(objUsuario, objConsultor, idUsuarioSesion);
         }
 

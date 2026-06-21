@@ -25,16 +25,22 @@ namespace Presentacion
 
             using (var contexto = new DBcitaproEntities())
             {
-                var usuario = contexto.Usuario
-                      .FirstOrDefault(u => u.Dni == dni && u.Contraseña == contrasena);
+                Usuario usuario = null;
+
+                foreach (var u in contexto.Usuario)
+                {
+                    if (u.Dni == dni && u.Contraseña == contrasena)
+                    {
+                        usuario = u;
+                        break; 
+                    }
+                }
 
                 if (usuario == null)
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos");
                     return;
                 }
-
-
 
                 frmMenuAdministrador menu = new frmMenuAdministrador(usuario.Idusuario);
                 menu.Show();

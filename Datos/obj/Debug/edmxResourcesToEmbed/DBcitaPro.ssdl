@@ -30,7 +30,7 @@
     <Key>
       <PropertyRef Name="IdConsultor" />
     </Key>
-    <Property Name="IdConsultor" Type="int" Nullable="false" />
+    <Property Name="IdConsultor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Idusuario" Type="int" Nullable="false" />
     <Property Name="IdRubro" Type="int" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="300" />
@@ -97,7 +97,7 @@
     <Key>
       <PropertyRef Name="Idusuario" />
     </Key>
-    <Property Name="Idusuario" Type="int" Nullable="false" />
+    <Property Name="Idusuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Idtipo" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="256" />
     <Property Name="Dni" Type="varchar" MaxLength="8" />
