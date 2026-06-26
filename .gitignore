@@ -1,0 +1,12 @@
+# Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+
+# Archivos temporales
+*.user
+*.suo
+*.cache
+*.log
+*.pdb
+*.exe
