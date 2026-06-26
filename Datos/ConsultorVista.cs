@@ -18,5 +18,12 @@ namespace Datos
         public string Descripcion { get; set; }
         public decimal? Monto { get; set; }
         public string Estado { get; set; }
+
+
+        public int Idusuario { get; set; }
+        public int IdRubro { get; set; }
+        public string Contraseña { get; set; }
+
+
     }
 }

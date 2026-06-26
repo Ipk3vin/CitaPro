@@ -43,9 +43,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 24);
+            this.label1.Size = new System.Drawing.Size(41, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario(DNI)";
+            this.label1.Text = "DNI";
             // 
             // label2
             // 
@@ -60,9 +60,9 @@
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(188, 161);
+            this.btnIngresar.Location = new System.Drawing.Point(48, 165);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(101, 36);
+            this.btnIngresar.Size = new System.Drawing.Size(254, 36);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -71,11 +71,11 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(49, 161);
+            this.btnRegistrar.Location = new System.Drawing.Point(48, 217);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(101, 36);
+            this.btnRegistrar.Size = new System.Drawing.Size(254, 36);
             this.btnRegistrar.TabIndex = 3;
-            this.btnRegistrar.Text = " Registrar";
+            this.btnRegistrar.Text = "Nuevo Registro";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
             // txtUsuario
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 247);
+            this.ClientSize = new System.Drawing.Size(341, 287);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);

@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "M:\\visual estudio moradito\\CitaPro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{437C38A9-2708-43B6-97E2-D5C2FF7035A9}|Datos\\Datos.csproj|m:\\visual estudio moradito\\citapro\\datos\\dconsultorvista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{437C38A9-2708-43B6-97E2-D5C2FF7035A9}|Datos\\Datos.csproj|solutionrelative:datos\\dconsultorvista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{437C38A9-2708-43B6-97E2-D5C2FF7035A9}|Datos\\Datos.csproj|m:\\visual estudio moradito\\citapro\\datos\\dconsultores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{437C38A9-2708-43B6-97E2-D5C2FF7035A9}|Datos\\Datos.csproj|solutionrelative:datos\\dconsultores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABE3E11A-DDB2-4952-B688-6041597C6731}|Negocio\\Negocio.csproj|m:\\visual estudio moradito\\citapro\\negocio\\nconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABE3E11A-DDB2-4952-B688-6041597C6731}|Negocio\\Negocio.csproj|solutionrelative:negocio\\nconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|M:\\visual estudio moradito\\CitaPro\\presentacion\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|M:\\visual estudio moradito\\CitaPro\\presentacion\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmregistrarconsultor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmnuevacita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmnuevacita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmnuevacita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmnuevacita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmmiscitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmmenucliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|m:\\visual estudio moradito\\citapro\\presentacion\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52658278-0FA2-47B0-84F6-0A9982A41191}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\frmmenuadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,89 +49,152 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 317,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DConsultorVista.cs",
-              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Datos\\DConsultorVista.cs",
-              "RelativeDocumentMoniker": "Datos\\DConsultorVista.cs",
-              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Datos\\DConsultorVista.cs",
-              "RelativeToolTip": "Datos\\DConsultorVista.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T04:01:19.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NConsultor.cs",
-              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Negocio\\NConsultor.cs",
-              "RelativeDocumentMoniker": "Negocio\\NConsultor.cs",
-              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Negocio\\NConsultor.cs",
-              "RelativeToolTip": "Negocio\\NConsultor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T04:00:15.658Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 307,
+          "SelectedChildIndex": 1,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\Program.cs",
-              "RelativeDocumentMoniker": "Presentacion\\Program.cs",
-              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\Program.cs",
-              "RelativeToolTip": "Presentacion\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T03:54:14.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "frmRegistrarConsultor.cs [Dise\u00F1o]",
               "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmRegistrarConsultor.cs",
               "RelativeDocumentMoniker": "Presentacion\\frmRegistrarConsultor.cs",
               "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmRegistrarConsultor.cs [Dise\u00F1o]",
               "RelativeToolTip": "Presentacion\\frmRegistrarConsultor.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T05:56:45Z",
+              "WhenOpened": "2026-06-26T21:44:53.187Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmRegistrarConsultor.cs",
-              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmRegistrarConsultor.cs",
-              "RelativeDocumentMoniker": "Presentacion\\frmRegistrarConsultor.cs",
-              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmRegistrarConsultor.cs",
-              "RelativeToolTip": "Presentacion\\frmRegistrarConsultor.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwEYAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmRegistrarCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmRegistrarCliente.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmRegistrarCliente.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmRegistrarCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmRegistrarCliente.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T05:46:37.712Z",
+              "WhenOpened": "2026-06-26T21:39:27.236Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmMisCitas.cs",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMisCitas.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMisCitas.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMisCitas.cs",
+              "RelativeToolTip": "Presentacion\\frmMisCitas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:36:48.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DConsultores.cs",
-              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Datos\\DConsultores.cs",
-              "RelativeDocumentMoniker": "Datos\\DConsultores.cs",
-              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Datos\\DConsultores.cs",
-              "RelativeToolTip": "Datos\\DConsultores.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAA1AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "frmMenuCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuCliente.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMenuCliente.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmMenuCliente.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T06:00:26.159Z",
+              "WhenOpened": "2026-06-26T20:55:51.267Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmNuevaCita.cs",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmNuevaCita.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmNuevaCita.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmNuevaCita.cs",
+              "RelativeToolTip": "Presentacion\\frmNuevaCita.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:35:41.898Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmNuevaCita.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmNuevaCita.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmNuevaCita.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmNuevaCita.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmNuevaCita.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:35:40.546Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmMenuAdministrador.cs",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuAdministrador.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMenuAdministrador.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuAdministrador.cs",
+              "RelativeToolTip": "Presentacion\\frmMenuAdministrador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:34:40.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmMenuAdministrador.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuAdministrador.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMenuAdministrador.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmMenuAdministrador.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:34:39.757Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmMisCitas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMisCitas.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMisCitas.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMisCitas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmMisCitas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:36:46.845Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmMenuCliente.cs",
+              "DocumentMoniker": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuCliente.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMenuCliente.cs",
+              "ToolTip": "M:\\visual estudio moradito\\CitaPro\\Presentacion\\frmMenuCliente.cs",
+              "RelativeToolTip": "Presentacion\\frmMenuCliente.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T21:00:36.083Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 88,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }

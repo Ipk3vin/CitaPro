@@ -19,9 +19,15 @@ namespace Presentacion
             idUsuarioSesion = idAdmin;
         }
 
-        private void btnRegistrarConsultor_Click(object sender, EventArgs e)
+        private void btn_RegistrarConsultor_Click(object sender, EventArgs e)
         {
             frmRegistrarConsultor frm = new frmRegistrarConsultor(idUsuarioSesion);
+            frm.Show();
+        }
+
+        private void btn_HabilitarEditarEliminar_Click(object sender, EventArgs e)
+        {
+            frmMenuEditarConsultor frm = new frmMenuEditarConsultor(idUsuarioSesion);
             frm.Show();
         }
     }

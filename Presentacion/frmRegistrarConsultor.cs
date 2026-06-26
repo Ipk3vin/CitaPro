@@ -23,19 +23,6 @@ namespace Presentacion
             idUsuarioSesion = idAdmin;
         }
 
-        private void frmRegistrarConsultor_Load(object sender, EventArgs e)
-        {
-            cboRubro.DataSource = objNegocio.ListarRubros();
-            cboRubro.DisplayMember = "NombreRubro";
-            cboRubro.ValueMember = "IdRubro";
-            cboRubro.SelectedIndex = -1;
-
-            cboSexo.Items.Add("Masculino");
-            cboSexo.Items.Add("Femenino");
-
-            ActualizarDgv();
-        }
-
         void ActualizarDgv()
         {
             dgvConsultores.DataSource = null;
@@ -74,12 +61,6 @@ namespace Presentacion
             MessageBox.Show(mensaje);
             ActualizarDgv();
 
-
-            // Dentro de tu btnRegistrar_Click
-            string respuesta = objNegocio.RegistrarConsultor(objUsuario, objConsultor, idUsuarioSesion);
-
-            // Aquí sí puedes usar MessageBox porque estás en la capa de Presentación
-            MessageBox.Show(respuesta);
         }
     }
 }

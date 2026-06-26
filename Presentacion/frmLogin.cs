@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,35 +18,53 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+        NUsuario objUsuario = new NUsuario();
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string dni = txtUsuario.Text;
             string contrasena = txtContrasena.Text;
+            UsuarioSesion usuario = new UsuarioSesion();
 
-            using (var contexto = new DBcitaproEntities())
+            usuario = objUsuario.Login(dni, contrasena);
+
+            if (usuario == null)
             {
-                Usuario usuario = null;
+                MessageBox.Show("Usuario o contraseña incorrectos.");
+                return;
+            }
 
-                foreach (var u in contexto.Usuario)
-                {
-                    if (u.Dni == dni && u.Contraseña == contrasena)
-                    {
-                        usuario = u;
-                        break; 
-                    }
-                }
-
-                if (usuario == null)
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                    return;
-                }
-
-                frmMenuAdministrador menu = new frmMenuAdministrador(usuario.Idusuario);
-                menu.Show();
+            // Administrador
+            if (usuario.Idtipo == 1)
+            {
+                frmMenuAdministrador frm = new frmMenuAdministrador(usuario.Idusuario);
+                frm.Show();
                 this.Hide();
             }
+            // Consultor
+            else if (usuario.Idtipo == 2)
+            {
+                frmMenuConsultor frm = new frmMenuConsultor(usuario.Idusuario);
+                frm.Show();
+                this.Hide();
+            }
+            // Cliente
+            else if (usuario.Idtipo == 3)
+            {
+                frmMenuCliente frm = new frmMenuCliente(usuario.Idusuario);
+
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tipo de usuario no válido.");
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

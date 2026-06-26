@@ -21,3 +21,7 @@ M:\visual estudio moradito\CitaPro\Presentacion\bin\Debug\EntityFramework.SqlSer
 M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
 M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.exe
 M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.pdb
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmMenuEditarConsultor.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmMenuEditarDatosConsultor.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmMenuCliente.resources
+M:\visual estudio moradito\CitaPro\Presentacion\obj\Debug\Presentacion.frmNuevaCita.resources

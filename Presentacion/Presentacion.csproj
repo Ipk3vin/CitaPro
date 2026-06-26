@@ -68,6 +68,48 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuCliente.Designer.cs">
+      <DependentUpon>frmMenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuConsultor.Designer.cs">
+      <DependentUpon>frmMenuConsultor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuEditarConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuEditarConsultor.Designer.cs">
+      <DependentUpon>frmMenuEditarConsultor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuEditarDatosConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuEditarDatosConsultor.Designer.cs">
+      <DependentUpon>frmMenuEditarDatosConsultor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMisCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMisCitas.Designer.cs">
+      <DependentUpon>frmMisCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevaCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevaCita.Designer.cs">
+      <DependentUpon>frmNuevaCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarCliente.Designer.cs">
+      <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistrarConsultor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +123,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuAdministrador.resx">
       <DependentUpon>frmMenuAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuCliente.resx">
+      <DependentUpon>frmMenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuEditarConsultor.resx">
+      <DependentUpon>frmMenuEditarConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuEditarDatosConsultor.resx">
+      <DependentUpon>frmMenuEditarDatosConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaCita.resx">
+      <DependentUpon>frmNuevaCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarCliente.resx">
+      <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarConsultor.resx">
       <DependentUpon>frmRegistrarConsultor.cs</DependentUpon>
