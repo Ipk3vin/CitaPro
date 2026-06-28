@@ -33,6 +33,7 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnHabilitarEditarEliminar = new System.Windows.Forms.Button();
             this.btnRegistrarConsultor = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -48,11 +49,12 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(114, 297);
+            this.btnSalir.Location = new System.Drawing.Point(114, 368);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(250, 35);
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // btnReportes
             // 
@@ -83,11 +85,22 @@
             this.btnRegistrarConsultor.Text = "Registrar Consultor";
             this.btnRegistrarConsultor.Click += new System.EventHandler(this.btn_RegistrarConsultor_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(114, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 36);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Auditoria";
+            this.button1.Click += new System.EventHandler(this.btn_Auditoria_Click);
+            // 
             // frmMenuAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 415);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReportes);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnHabilitarEditarEliminar;
         private System.Windows.Forms.Button btnRegistrarConsultor;
+        private System.Windows.Forms.Button button1;
     }
 }

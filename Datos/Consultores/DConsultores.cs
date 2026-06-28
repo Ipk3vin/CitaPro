@@ -53,6 +53,25 @@ namespace Datos
                     context.Consultor.Add(objConsultor);
                     context.SaveChanges();
 
+                    Auditoria objAuditoria = new Auditoria();
+
+                    objAuditoria.NombreTabla = "Consultor";
+                    objAuditoria.IdTablaCambio = objConsultor.IdConsultor;
+                    objAuditoria.Accion = "Registrar";
+                    objAuditoria.ValorAnterior = null;
+                    objAuditoria.ValorNuevo = objUsuario.Nombre;
+                                              
+                    objAuditoria.Estado = "Activo";
+
+                    objAuditoria.CreatedBy = idUsuarioSesion;
+                    objAuditoria.CreatedAt = DateTime.Now;
+
+                    objAuditoria.ModifiedBy = null;
+                    objAuditoria.ModifiedAt = null;
+
+                    context.Auditoria.Add(objAuditoria);
+                    context.SaveChanges();
+
                     respuesta = "Consultor registrado correctamente.";
                 }
             }
@@ -103,7 +122,7 @@ namespace Datos
                 var consultor = from c in contexto.Consultor
                                 join u in contexto.Usuario on c.Idusuario equals u.Idusuario
                                 join r in contexto.Rubro on c.IdRubro equals r.IdRubro
-                                where u.Dni == dni && c.Estado != "Inactivo"
+                                where u.Dni == dni 
                                 select new ConsultorVista
                                 {
                                     IdConsultor = c.IdConsultor,
@@ -128,8 +147,8 @@ namespace Datos
 
         }
 
-        // Habilitar o deshabilitar consultor
-        public string CambiarEstadoConsultor(int idConsultor, bool habilitar)
+        // Habilitar o deshabilitar consultor ..........................
+        public string CambiarEstadoConsultor(int idConsultor, bool habilitar, int idUsuarioSesion)
         {
             using (var contexto = new DBcitaproEntities())
             {
@@ -140,14 +159,54 @@ namespace Datos
                     return "No se encontró el consultor.";
                 }
 
+                string estadoAnterior = consultor.Estado;
+                string estadoNuevo = "";
+                string accion = "";
+
                 if (habilitar == true)
                 {
-                    consultor.Estado = "Activo";
+                    estadoNuevo = "Activo";
+                    accion = "Habilitar";
                 }
                 else
                 {
-                    consultor.Estado = "Inactivo";
+                    estadoNuevo = "Inactivo";
+                    accion = "Deshabilitar";
                 }
+
+                int createdByOriginal = idUsuarioSesion;
+                DateTime createdAtOriginal = DateTime.Now;
+
+                var auditoriaRegistro = from a in contexto.Auditoria
+                                        where a.IdTablaCambio == idConsultor
+                                              && a.Accion == "Registrar"
+                                        select a;
+
+                foreach (var item in auditoriaRegistro)
+                {
+                    createdByOriginal = Convert.ToInt32(item.CreatedBy);
+                    createdAtOriginal = Convert.ToDateTime(item.CreatedAt);
+                    break;
+                }
+
+                consultor.Estado = estadoNuevo;
+
+                Auditoria objAuditoria = new Auditoria();
+
+                objAuditoria.NombreTabla = "Consultor";
+                objAuditoria.IdTablaCambio = idConsultor;
+                objAuditoria.Accion = accion;
+                objAuditoria.ValorAnterior =  estadoAnterior;
+                objAuditoria.ValorNuevo =  estadoNuevo;
+                objAuditoria.Estado = estadoNuevo;
+
+                objAuditoria.CreatedBy = createdByOriginal;
+                objAuditoria.CreatedAt = createdAtOriginal;
+
+                objAuditoria.ModifiedBy = idUsuarioSesion;
+                objAuditoria.ModifiedAt = DateTime.Now;
+
+                contexto.Auditoria.Add(objAuditoria);
 
                 contexto.SaveChanges();
 
@@ -155,7 +214,7 @@ namespace Datos
             }
         }
 
-        // Eliminar consultor
+        // Eliminar consultor............................................
         public string EliminarConsultor(int idConsultor)
         {
             using (var contexto = new DBcitaproEntities())
@@ -203,7 +262,7 @@ namespace Datos
             }
         }
 
-        //modificar lso datos de consultor 
+        //modificar lso datos de consultor
         public ConsultorVista ObtenerConsultorPorId(int idConsultor)
         {
             ConsultorVista consultorTemp = null;
@@ -242,7 +301,7 @@ namespace Datos
 
             return consultorTemp;
         }
-
+        //modificar lso datos de consultor..............................
         public string ActualizarConsultor(int idConsultor, Usuario objUsuario, Consultor objConsultor)
         {
             string respuesta = "";

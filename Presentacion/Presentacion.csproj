@@ -62,6 +62,18 @@
     <Compile Include="frmAgregarHorarios.Designer.cs">
       <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditoria.Designer.cs">
+      <DependentUpon>frmAuditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmarEliminarConsultor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmarEliminarConsultor.Designer.cs">
+      <DependentUpon>frmConfirmarEliminarConsultor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAgregarHorarios.resx">
       <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditoria.resx">
+      <DependentUpon>frmAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmarEliminarConsultor.resx">
+      <DependentUpon>frmConfirmarEliminarConsultor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

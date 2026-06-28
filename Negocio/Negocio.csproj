@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NAuditoria.cs" />
     <Compile Include="NCliente.cs" />
     <Compile Include="NConsultor.cs" />
     <Compile Include="NHorarioConsultor.cs" />

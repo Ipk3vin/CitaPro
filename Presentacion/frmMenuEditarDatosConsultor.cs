@@ -15,14 +15,20 @@ namespace Presentacion
     public partial class frmMenuEditarDatosConsultor : Form
     {
         private int idConsultor;
+        private int idUsuarioSesion;
         NConsultor objNegocio = new NConsultor();
 
-        public frmMenuEditarDatosConsultor(int idConsultor)
+        public frmMenuEditarDatosConsultor(int idConsul, int idUsuario)
         {
             InitializeComponent();
-            this.idConsultor = idConsultor;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+            idUsuarioSesion = idUsuario;
+            idConsultor = idConsul;
+
             CargarRubros();
             CargarDatosConsultor();
+            
         }
 
         private void CargarRubros()
@@ -108,12 +114,19 @@ namespace Presentacion
 
             if (mensaje == "Consultor actualizado correctamente.")
             {
+                frmMenuEditarConsultor frm = new frmMenuEditarConsultor(idUsuarioSesion);
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+
                 this.Close();
             }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            frmMenuEditarConsultor frm = new frmMenuEditarConsultor(idUsuarioSesion);
+            frm.Show();
+
             this.Close();
         }
     }

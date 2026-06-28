@@ -38,7 +38,7 @@
             this.lblNombreConsultor = new System.Windows.Forms.Label();
             this.btnEliminarConsultor = new System.Windows.Forms.Button();
             this.chkEstadoConsultor = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarHorarios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditarDatosConsultor
@@ -50,6 +50,7 @@
             this.btnEditarDatosConsultor.TabIndex = 0;
             this.btnEditarDatosConsultor.Text = "Editar datos";
             this.btnEditarDatosConsultor.UseVisualStyleBackColor = true;
+            this.btnEditarDatosConsultor.Click += new System.EventHandler(this.btnEditarDatosConsultor_Click);
             // 
             // btnVolver
             // 
@@ -60,6 +61,7 @@
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // label1
             // 
@@ -98,6 +100,7 @@
             this.btnBuscarConsultor.TabIndex = 6;
             this.btnBuscarConsultor.Text = "Buscar";
             this.btnBuscarConsultor.UseVisualStyleBackColor = true;
+            this.btnBuscarConsultor.Click += new System.EventHandler(this.btnBuscarConsultor_Click);
             // 
             // label3
             // 
@@ -128,6 +131,7 @@
             this.btnEliminarConsultor.TabIndex = 9;
             this.btnEliminarConsultor.Text = "Eliminar";
             this.btnEliminarConsultor.UseVisualStyleBackColor = true;
+            this.btnEliminarConsultor.Click += new System.EventHandler(this.btnEliminarConsultor_Click);
             // 
             // chkEstadoConsultor
             // 
@@ -139,24 +143,25 @@
             this.chkEstadoConsultor.TabIndex = 11;
             this.chkEstadoConsultor.Text = "Habilitar/Desabilitar";
             this.chkEstadoConsultor.UseVisualStyleBackColor = true;
+            this.chkEstadoConsultor.CheckedChanged += new System.EventHandler(this.chkEstadoConsultor_CheckedChanged);
             // 
-            // button1
+            // btnAgregarHorarios
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(45, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(390, 33);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Agregar Horarios";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnAgregarHorarios_Click);
+            this.btnAgregarHorarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarHorarios.Location = new System.Drawing.Point(45, 243);
+            this.btnAgregarHorarios.Name = "btnAgregarHorarios";
+            this.btnAgregarHorarios.Size = new System.Drawing.Size(390, 33);
+            this.btnAgregarHorarios.TabIndex = 12;
+            this.btnAgregarHorarios.Text = "Agregar Horarios";
+            this.btnAgregarHorarios.UseVisualStyleBackColor = true;
+            this.btnAgregarHorarios.Click += new System.EventHandler(this.btnAgregarHorarios_Click);
             // 
             // frmMenuEditarConsultor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 349);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAgregarHorarios);
             this.Controls.Add(this.chkEstadoConsultor);
             this.Controls.Add(this.btnEliminarConsultor);
             this.Controls.Add(this.lblNombreConsultor);
@@ -186,6 +191,6 @@
         private System.Windows.Forms.Label lblNombreConsultor;
         private System.Windows.Forms.Button btnEliminarConsultor;
         private System.Windows.Forms.CheckBox chkEstadoConsultor;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarHorarios;
     }
 }

@@ -20,6 +20,7 @@ namespace Presentacion
         public frmRegistrarConsultor(int idAdmin)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             idUsuarioSesion = idAdmin;
         }
 
@@ -62,5 +63,12 @@ namespace Presentacion
             ActualizarDgv();
 
         }
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmMenuAdministrador frm = new frmMenuAdministrador(idUsuarioSesion);
+            frm.Show();
+            this.Hide();
+        }
+
     }
 }

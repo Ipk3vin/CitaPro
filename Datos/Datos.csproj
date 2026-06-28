@@ -53,16 +53,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auditoria.cs">
+      <DependentUpon>DBcitaPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auditoria\DAuditoria.cs" />
     <Compile Include="Cita.cs">
       <DependentUpon>DBcitaPro.tt</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
       <DependentUpon>DBcitaPro.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clientes\DClientes.cs" />
     <Compile Include="Consultor.cs">
       <DependentUpon>DBcitaPro.tt</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\DClientes.cs" />
     <Compile Include="Consultores\ConsultorVista.cs" />
     <Compile Include="Consultores\DConsultores.cs" />
     <Compile Include="Consultores\DHorarioConsultor.cs" />
@@ -94,6 +98,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rubro.cs">
+      <DependentUpon>DBcitaPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DBcitaPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>DBcitaPro.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">

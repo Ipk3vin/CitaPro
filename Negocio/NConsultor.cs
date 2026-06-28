@@ -40,14 +40,14 @@ namespace Negocio
             return objConsultor.BuscarConsultorPorDni(dni);
         }
 
-        public string CambiarEstadoConsultor(int idConsultor, bool habilitar)
+        public string CambiarEstadoConsultor(int idConsultor, bool habilitar, int idUsuarioSesion)
         {
             if (idConsultor <= 0)
             {
                 return "Debe seleccionar un consultor válido.";
             }
 
-            return objConsultor.CambiarEstadoConsultor(idConsultor, habilitar);
+            return objConsultor.CambiarEstadoConsultor(idConsultor, habilitar, idUsuarioSesion);
         }
 
         public string EliminarConsultor(int idConsultor)

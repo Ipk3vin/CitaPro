@@ -17,6 +17,8 @@ namespace Presentacion
         public frmLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
         }
         NUsuario objUsuario = new NUsuario();
 
@@ -66,7 +68,7 @@ namespace Presentacion
         {
             frmRegistrarCliente frm = new frmRegistrarCliente();
             frm.Show();
-
+            
         }
     }
 }

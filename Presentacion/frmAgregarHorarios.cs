@@ -22,6 +22,7 @@ namespace Presentacion
         public frmAgregarHorarios(int idC, int idU)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             idConsultor = idC;
             idUsuarioSesion = idU;
@@ -83,6 +84,10 @@ namespace Presentacion
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            frmMenuEditarConsultor frm = new frmMenuEditarConsultor(idUsuarioSesion);
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
+
             this.Close();
         }
     }

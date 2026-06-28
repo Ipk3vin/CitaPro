@@ -16,6 +16,7 @@ namespace Presentacion
         public frmMenuAdministrador(int idAdmin)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             idUsuarioSesion = idAdmin;
         }
 
@@ -23,12 +24,30 @@ namespace Presentacion
         {
             frmRegistrarConsultor frm = new frmRegistrarConsultor(idUsuarioSesion);
             frm.Show();
+
+            this.Close();
         }
 
         private void btn_HabilitarEditarEliminar_Click(object sender, EventArgs e)
         {
             frmMenuEditarConsultor frm = new frmMenuEditarConsultor(idUsuarioSesion);
             frm.Show();
+
+            this.Close();
+        }
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            frmLogin frmlogin = new frmLogin();
+            frmlogin.Show();
+
+            this.Close();
+        }
+        private void btn_Auditoria_Click(object sender, EventArgs e)
+        {
+            frmAuditoria frm = new frmAuditoria(idUsuarioSesion);
+            frm.Show();
+
+            this.Close();
         }
     }
 }

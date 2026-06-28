@@ -15,33 +15,20 @@ namespace Presentacion
     public partial class frmMenuEditarConsultor : Form
     {
         private int idUsuarioSesion;
-
-        NConsultor objConsultor = new NConsultor();
-
-        ConsultorVista consultorSeleccionado = null;
-
         bool cargandoDatos = false;
+        NConsultor objConsultor = new NConsultor();
+        ConsultorVista consultorSeleccionado = null;
 
         // Constructor que recibe el ID del administrador
         public frmMenuEditarConsultor(int idAdmin)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             idUsuarioSesion = idAdmin;
-
-            InicializarFormulario();
-        }
-
-        private void InicializarFormulario()
-        {
-            btnBuscarConsultor.Click += btnBuscarConsultor_Click;
-            chkEstadoConsultor.CheckedChanged += chkEstadoConsultor_CheckedChanged;
-            btnEliminarConsultor.Click += btnEliminarConsultor_Click;
-            btnEditarDatosConsultor.Click += btnEditarDatosConsultor_Click;
-            btnVolver.Click += btnVolver_Click;
-
             DeshabilitarAcciones();
         }
+
         private void DeshabilitarAcciones()
         {
             cargandoDatos = true;
@@ -55,6 +42,7 @@ namespace Presentacion
 
             btnEliminarConsultor.Enabled = false;
             btnEditarDatosConsultor.Enabled = false;
+            btnAgregarHorarios.Enabled = false;
 
             cargandoDatos = false;
         }
@@ -67,16 +55,22 @@ namespace Presentacion
             lblNombreConsultor.Text = consultor.Nombre;
 
             chkEstadoConsultor.Enabled = true;
-            btnEliminarConsultor.Enabled = true;
-            btnEditarDatosConsultor.Enabled = true;
 
             if (consultor.Estado == "Activo")
             {
                 chkEstadoConsultor.Checked = true;
+
+                btnEliminarConsultor.Enabled = true;
+                btnEditarDatosConsultor.Enabled = true;
+                btnAgregarHorarios.Enabled = true;
             }
             else
             {
                 chkEstadoConsultor.Checked = false;
+
+                btnEliminarConsultor.Enabled = false;
+                btnEditarDatosConsultor.Enabled = false;
+                btnAgregarHorarios.Enabled = false;
             }
 
             cargandoDatos = false;
@@ -119,76 +113,80 @@ namespace Presentacion
             bool habilitar = chkEstadoConsultor.Checked;
 
             string mensaje = objConsultor.CambiarEstadoConsultor(
-                consultorSeleccionado.IdConsultor,
-                habilitar
-            );
+                            consultorSeleccionado.IdConsultor,
+                            habilitar,
+                            idUsuarioSesion
+                        );
 
             MessageBox.Show(mensaje);
 
-            if (habilitar)
+            if (habilitar == true)
             {
                 consultorSeleccionado.Estado = "Activo";
+
+                btnEliminarConsultor.Enabled = true;
+                btnEditarDatosConsultor.Enabled = true;
+                btnAgregarHorarios.Enabled = true;
             }
             else
             {
                 consultorSeleccionado.Estado = "Inactivo";
+
+                btnEliminarConsultor.Enabled = false;
+                btnEditarDatosConsultor.Enabled = false;
+                btnAgregarHorarios.Enabled = false;
             }
+
+            chkEstadoConsultor.Enabled = true;
         }
 
         private void btnEliminarConsultor_Click(object sender, EventArgs e)
         {
-            if (consultorSeleccionado == null)
-            {
-                MessageBox.Show("Primero debe buscar un consultor.");
-                return;
-            }
 
-            DialogResult respuesta = MessageBox.Show(
-                "¿Está seguro que desea eliminar este consultor?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
+            frmConfirmarEliminarConsultor frm = new frmConfirmarEliminarConsultor(
+                consultorSeleccionado.IdConsultor,
+                idUsuarioSesion
             );
 
-            if (respuesta == DialogResult.Yes)
-            {
-                string mensaje = objConsultor.EliminarConsultor(
-                    consultorSeleccionado.IdConsultor
-                );
+            frm.Show();
 
-                MessageBox.Show(mensaje);
-
-                txtDni.Clear();
-                DeshabilitarAcciones();
-            }
+            this.Close();
         }
 
         private void btnEditarDatosConsultor_Click(object sender, EventArgs e)
         {
-            if (consultorSeleccionado == null)
-            {
-                MessageBox.Show("Primero debe buscar un consultor.");
-                return;
-            }
+            
+            frmMenuEditarDatosConsultor frm = new frmMenuEditarDatosConsultor(
+                consultorSeleccionado.IdConsultor, idUsuarioSesion
+            );
+            
+            frm.Show();
 
-            frmMenuEditarDatosConsultor formulario = new frmMenuEditarDatosConsultor(
-                consultorSeleccionado.IdConsultor
-            ); formulario.ShowDialog();
+            this.Close();
+
+        }
+
+        private void btnAgregarHorarios_Click(object sender, EventArgs e)
+        {
+
+            frmAgregarHorarios frm = new frmAgregarHorarios(
+                consultorSeleccionado.IdConsultor,
+                idUsuarioSesion
+            );
+
+            frm.Show();
+
+            this.Close();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            frmMenuAdministrador frm = new frmMenuAdministrador(idUsuarioSesion);
+            frm.Show();
+
             this.Close();
         }
 
-        private void btnAgregarHorarios_Click(object sender, EventArgs e) 
-        {
-            frmAgregarHorarios frm = new frmAgregarHorarios(
-                consultorSeleccionado.IdConsultor,  idUsuarioSesion);
-            frm.Show();
-        
-        
-        
-        }
+
     }
 }
