@@ -180,5 +180,15 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void btnAgregarHorarios_Click(object sender, EventArgs e) 
+        {
+            frmAgregarHorarios frm = new frmAgregarHorarios(
+                consultorSeleccionado.IdConsultor,  idUsuarioSesion);
+            frm.Show();
+        
+        
+        
+        }
     }
 }

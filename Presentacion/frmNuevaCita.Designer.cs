@@ -79,7 +79,7 @@
             this.dgvConsultores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultores.Location = new System.Drawing.Point(12, 96);
             this.dgvConsultores.Name = "dgvConsultores";
-            this.dgvConsultores.Size = new System.Drawing.Size(614, 107);
+            this.dgvConsultores.Size = new System.Drawing.Size(641, 107);
             this.dgvConsultores.TabIndex = 3;
             // 
             // dtpFecha
@@ -122,7 +122,7 @@
             this.dgvDetalleConsultor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleConsultor.Location = new System.Drawing.Point(307, 246);
             this.dgvDetalleConsultor.Name = "dgvDetalleConsultor";
-            this.dgvDetalleConsultor.Size = new System.Drawing.Size(319, 218);
+            this.dgvDetalleConsultor.Size = new System.Drawing.Size(346, 218);
             this.dgvDetalleConsultor.TabIndex = 8;
             // 
             // label4
@@ -144,6 +144,7 @@
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnVolver
             // 

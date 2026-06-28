@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarHorarios.Designer.cs">
+      <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarHorarios.resx">
+      <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

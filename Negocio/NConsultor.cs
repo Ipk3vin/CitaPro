@@ -100,6 +100,16 @@ namespace Negocio
         }
 
 
+        //clientessss
+        public List<ConsultorVista> ListarConsultoresPorRubro(int idRubro)
+        {
+            if (idRubro <= 0)
+            {
+                return new List<ConsultorVista>();
+            }
+
+            return objConsultor.ListarConsultoresPorRubro(idRubro);
+        }
 
 
 

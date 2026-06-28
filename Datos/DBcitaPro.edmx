@@ -24,7 +24,7 @@
           <Key>
             <PropertyRef Name="IdCliente" />
           </Key>
-          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Idusuario" Type="int" Nullable="false" />
           <Property Name="CreatedBy" Type="int" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -64,7 +64,7 @@
           <Key>
             <PropertyRef Name="IdHorario" />
           </Key>
-          <Property Name="IdHorario" Type="int" Nullable="false" />
+          <Property Name="IdHorario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IdConsultor" Type="int" Nullable="false" />
           <Property Name="IdEstadoHorario" Type="int" Nullable="false" />
           <Property Name="FechaHoraInicio" Type="datetime" />
@@ -298,7 +298,7 @@
           <Key>
             <PropertyRef Name="IdCliente" />
           </Key>
-          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Idusuario" Type="Int32" Nullable="false" />
           <Property Name="CreatedBy" Type="Int32" Nullable="false" />
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
@@ -345,7 +345,7 @@
           <Key>
             <PropertyRef Name="IdHorario" />
           </Key>
-          <Property Name="IdHorario" Type="Int32" Nullable="false" />
+          <Property Name="IdHorario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdConsultor" Type="Int32" Nullable="false" />
           <Property Name="IdEstadoHorario" Type="Int32" Nullable="false" />
           <Property Name="FechaHoraInicio" Type="DateTime" Precision="3" />

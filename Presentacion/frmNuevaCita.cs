@@ -33,12 +33,37 @@ namespace Presentacion
 
             cboRubro.SelectedIndex = -1;
         }
-
         private void CargarConsultores()
         {
             dgvConsultores.DataSource = null;
             dgvConsultores.DataSource = objConsultor.ListarConsultores();
 
+            FormatoDgvConsultores();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (cboRubro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un rubro.");
+                return;
+            }
+
+            int idRubro = Convert.ToInt32(cboRubro.SelectedValue);
+
+            dgvConsultores.DataSource = null;
+            dgvConsultores.DataSource = objConsultor.ListarConsultoresPorRubro(idRubro);
+
+            FormatoDgvConsultores();
+        }
+
+        private void FormatoDgvConsultores()
+        {
             if (dgvConsultores.Columns["IdConsultor"] != null)
             {
                 dgvConsultores.Columns["IdConsultor"].Visible = false;
@@ -79,6 +104,16 @@ namespace Presentacion
                 dgvConsultores.Columns["Nombre"].HeaderText = "Nombre";
             }
 
+            if (dgvConsultores.Columns["Telefono"] != null)
+            {
+                dgvConsultores.Columns["Telefono"].HeaderText = "Teléfono";
+            }
+
+            if (dgvConsultores.Columns["Correo"] != null)
+            {
+                dgvConsultores.Columns["Correo"].HeaderText = "Correo";
+            }
+
             if (dgvConsultores.Columns["Rubro"] != null)
             {
                 dgvConsultores.Columns["Rubro"].HeaderText = "Rubro";
@@ -93,29 +128,7 @@ namespace Presentacion
             {
                 dgvConsultores.Columns["Monto"].HeaderText = "Monto";
             }
-
-            if (dgvConsultores.Columns["Telefono"] != null)
-            {
-                dgvConsultores.Columns["Telefono"].HeaderText = "Teléfono";
-            }
-
-            if (dgvConsultores.Columns["Correo"] != null)
-            {
-                dgvConsultores.Columns["Correo"].HeaderText = "Correo";
-            }
         }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-
-
-
-
-
 
 
 

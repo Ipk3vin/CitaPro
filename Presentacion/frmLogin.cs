@@ -64,6 +64,8 @@ namespace Presentacion
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            frmRegistrarCliente frm = new frmRegistrarCliente();
+            frm.Show();
 
         }
     }

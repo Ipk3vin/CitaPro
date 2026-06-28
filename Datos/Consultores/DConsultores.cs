@@ -319,9 +319,34 @@ namespace Datos
         }
 
 
+        //clientes
 
+        public List<ConsultorVista> ListarConsultoresPorRubro(int idRubro)
+        {
+            using (var contexto = new DBcitaproEntities())
+            {
+                var lista = from c in contexto.Consultor
+                            join u in contexto.Usuario on c.Idusuario equals u.Idusuario
+                            join r in contexto.Rubro on c.IdRubro equals r.IdRubro
+                            where c.IdRubro == idRubro
+                                  && c.Estado == "Activo"
+                            select new ConsultorVista
+                            {
+                                IdConsultor = c.IdConsultor,
+                                Nombre = u.Nombre,
+                                Dni = u.Dni,
+                                Sexo = u.Sexo,
+                                Telefono = u.Telefono,
+                                Correo = u.Correo,
+                                Rubro = r.NombreRubro,
+                                Descripcion = c.Descripcion,
+                                Monto = c.Monto,
+                                Estado = c.Estado
+                            };
 
-
+                return lista.ToList();
+            }
+        }
 
 
 

@@ -57,6 +57,7 @@
             this.btnVolver.TabIndex = 91;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // cboSexo
             // 
@@ -171,6 +172,7 @@
             this.btnRegistrarse.TabIndex = 80;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // txtNombre
             // 

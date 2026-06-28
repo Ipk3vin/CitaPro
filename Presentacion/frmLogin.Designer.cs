@@ -77,6 +77,7 @@
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Nuevo Registro";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtUsuario
             // 
