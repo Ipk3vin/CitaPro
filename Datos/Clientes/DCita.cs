@@ -1,5 +1,6 @@
 ﻿using Datos.Clientes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -73,7 +74,67 @@ namespace Datos
             }
         }
 
+        public IList BuscarCitasPorFecha(DateTime fechaSeleccionada, int idConsultor)
+        {
+            using (var db = new DBcitaproEntities())
+            {
+                DateTime inicioDia = fechaSeleccionada.Date;
+                DateTime finDia = inicioDia.AddDays(1);
 
+                var citas = db.Cita // Asegúrate de que este sea el nombre de tu DbSet
+                    .Where(c => c.HorarioConsultor.IdConsultor == idConsultor &&
+                                c.HorarioConsultor.FechaHoraInicio.HasValue &&
+                                c.HorarioConsultor.FechaHoraInicio.Value >= inicioDia &&
+                                c.HorarioConsultor.FechaHoraInicio.Value < finDia)
+                    .Select(c => new
+                    {
+                        IdCita = c.IdCita, // OJO: Ahora capturamos el ID de la Cita, no del horario
+
+                        // Si tu Cita está ligada a un Cliente, ¡puedes mostrarlo en la grilla!
+                        // Cliente = c.Cliente.Nombre, 
+
+                        Inicio = c.HorarioConsultor.FechaHoraInicio,
+                        Fin = c.HorarioConsultor.FechaHoraFin,
+
+                        // Ajusta estos nombres según tu entidad Cita y su Estado
+                        IdEstado = c.IdEstado,
+                        Estado = c.Estado.NombreEstado
+                    })
+                    .ToList();
+
+                return citas;
+            }
+        }
+
+        public bool AtenderCita(int idCita, int idUsuarioModifica)
+        {
+            using (var db = new DBcitaproEntities())
+            {
+                try
+                {
+                    // Buscamos la CITA, no el horario
+                    var cita = db.Cita.FirstOrDefault(c => c.IdCita == idCita);
+
+                    if (cita != null)
+                    {
+                        // Suponiendo que el IdEstadoCita = 2 significa "Atendido"
+                        cita.IdEstado = 3;
+
+                        // Auditoría de la tabla Cita
+                        cita.ModifiedBy = idUsuarioModifica;
+                        cita.ModifiedAt = DateTime.Now;
+
+                        db.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
 
 
     }

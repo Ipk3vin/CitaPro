@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Datos.Clientes;
 using Negocio;
 using Presentacion;
 using Presentacion.frmConsultor;
@@ -17,7 +18,7 @@ namespace Presentacion.frmConsultor
     public partial class frmConsultarCitas : Form
     {
         private int idUsuarioSesion;
-        private NHorarioConsultor nHorarios = new NHorarioConsultor();
+        private NCita nCitas = new NCita();
         public frmConsultarCitas(int idconsultor)
         {
             InitializeComponent();
@@ -36,27 +37,27 @@ namespace Presentacion.frmConsultor
             {
                 DateTime fecha = dtpFecha.Value.Date;
 
-                // MEJORA: Pasamos el ID del consultor para que solo vea SUS horarios
-                var listaHorarios = nHorarios.BuscarHorariosPorFecha(fecha, idUsuarioSesion);
+                // Llamamos al método actualizado
+                var listaCitas = nCitas.BuscarCitasPorFecha(fecha, idUsuarioSesion);
 
-                dgvCitas.DataSource = listaHorarios;
+                dgvCitas.DataSource = listaCitas;
 
-                // Ocultamos la columna del IdEstado para que el usuario no la vea, 
-                // pero la mantenemos en la grilla para validaciones lógicas
                 if (dgvCitas.Columns["IdEstado"] != null)
-                {
                     dgvCitas.Columns["IdEstado"].Visible = false;
-                }
+
+                // Opcional: Ocultar también el IdCita si no quieres que el consultor lo vea
+                if (dgvCitas.Columns["IdCita"] != null)
+                    dgvCitas.Columns["IdCita"].Visible = false;
 
                 if (dgvCitas.Rows.Count == 0)
                 {
-                    MessageBox.Show("No se encontraron horarios para la fecha seleccionada.",
+                    MessageBox.Show("No se encontraron citas para la fecha seleccionada.",
                                     "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar horarios: " + ex.Message,
+                MessageBox.Show("Error al buscar citas: " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -66,38 +67,37 @@ namespace Presentacion.frmConsultor
             if (dgvCitas.SelectedRows.Count > 0)
             {
                 var fila = dgvCitas.SelectedRows[0];
-                int idHorario = Convert.ToInt32(fila.Cells["IdHorario"].Value);
+
+                // ¡CAMBIO CLAVE AQUÍ! Leemos IdCita
+                int idCita = Convert.ToInt32(fila.Cells["IdCita"].Value);
                 int idEstado = Convert.ToInt32(fila.Cells["IdEstado"].Value);
 
-                // Suponiendo que el IdEstadoHorario = 4 es "Pendiente"
-                if (idEstado == 2)
+                // Suponiendo que el estado 1 es "Reservada / Pendiente"
+                if (idEstado == 4)
                 {
-                    // MEJORA: Pasamos el ID del consultor actual para la auditoría (ModifiedBy)
-                    bool exito = nHorarios.AtenderCita(idHorario, idUsuarioSesion);
+                    bool exito = nCitas.AtenderCita(idCita, idUsuarioSesion);
 
                     if (exito)
                     {
-                        MessageBox.Show("El horario ha sido marcado como Atendido.",
+                        MessageBox.Show("La cita ha sido marcada como Atendida.",
                                         "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Refrescamos la lista automáticamente
                         btnBuscar.PerformClick();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo actualizar el estado.",
+                        MessageBox.Show("No se pudo actualizar el estado de la cita.",
                                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Este horario ya fue atendido o no se encuentra pendiente.",
+                    MessageBox.Show("Esta cita ya fue atendida.",
                                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un horario de la lista.",
+                MessageBox.Show("Por favor, seleccione una cita de la lista.",
                                 "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
