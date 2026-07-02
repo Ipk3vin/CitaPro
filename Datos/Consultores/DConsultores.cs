@@ -262,7 +262,6 @@ namespace Datos
             }
         }
 
-        //modificar lso datos de consultor
         public ConsultorVista ObtenerConsultorPorId(int idConsultor)
         {
             ConsultorVista consultorTemp = null;
@@ -301,7 +300,6 @@ namespace Datos
 
             return consultorTemp;
         }
-        //modificar lso datos de consultor..............................
         public string ActualizarConsultor(int idConsultor, Usuario objUsuario, Consultor objConsultor)
         {
             string respuesta = "";
@@ -378,7 +376,7 @@ namespace Datos
         }
 
 
-        //clientes
+       
 
         public List<ConsultorVista> ListarConsultoresPorRubro(int idRubro)
         {
@@ -407,7 +405,23 @@ namespace Datos
             }
         }
 
+        public int ObtenerIdConsultorPorUsuario(int idUsuario)
+        {
+            using (var contexto = new DBcitaproEntities())
+            {
+                // Buscamos el primer consultor que coincida con el Idusuario
+                var consultor = contexto.Consultor.FirstOrDefault(c => c.Idusuario == idUsuario);
 
+                if (consultor != null)
+                {
+                    return consultor.IdConsultor;
+                }
+                else
+                {
+                    return 0; // O manejar según tu lógica si no existe
+                }
+            }
+        }
 
 
 

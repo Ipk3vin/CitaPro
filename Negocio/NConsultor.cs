@@ -115,6 +115,14 @@ namespace Negocio
 
 
 
+        public int ObtenerIdConsultorPorUsuario(int idUsuario)
+        {
+            return objConsultor.ObtenerIdConsultorPorUsuario(idUsuario);
+        }
+
+
+
+
 
 
 

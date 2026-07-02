@@ -22,7 +22,7 @@ namespace Presentacion
         }
         NUsuario objUsuario = new NUsuario();
         NCliente objNegocioCliente = new NCliente();
-
+        NConsultor objNegocioConsultor = new NConsultor();
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -48,8 +48,9 @@ namespace Presentacion
             // Consultor
             else if (usuario.Idtipo == 2)
             {
-                frmMenuConsultor frm = new frmMenuConsultor(usuario.Idusuario);
-                frm.Show();
+                int idConsultor = objNegocioConsultor.ObtenerIdConsultorPorUsuario(usuario.Idusuario);
+                frmMenuConsultor frmConsultor = new frmMenuConsultor(idConsultor);
+                frmConsultor.Show();
                 this.Hide();
             }
             // Cliente

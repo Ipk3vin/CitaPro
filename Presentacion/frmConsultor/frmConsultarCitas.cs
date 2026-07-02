@@ -69,8 +69,8 @@ namespace Presentacion.frmConsultor
                 int idHorario = Convert.ToInt32(fila.Cells["IdHorario"].Value);
                 int idEstado = Convert.ToInt32(fila.Cells["IdEstado"].Value);
 
-                // Suponiendo que el IdEstadoHorario = 1 es "Pendiente"
-                if (idEstado == 1)
+                // Suponiendo que el IdEstadoHorario = 4 es "Pendiente"
+                if (idEstado == 2)
                 {
                     // MEJORA: Pasamos el ID del consultor actual para la auditoría (ModifiedBy)
                     bool exito = nHorarios.AtenderCita(idHorario, idUsuarioSesion);
