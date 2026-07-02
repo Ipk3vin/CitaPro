@@ -74,6 +74,18 @@
     <Compile Include="frmConsultor\frmConfirmarEliminarConsultor.Designer.cs">
       <DependentUpon>frmConfirmarEliminarConsultor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultor\frmConsultarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultor\frmConsultarCitas.Designer.cs">
+      <DependentUpon>frmConsultarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultor\frmModificarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultor\frmModificarContrasena.Designer.cs">
+      <DependentUpon>frmModificarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,8 +146,17 @@
     <Compile Include="frmConsultor\frmRegistrarConsultor.Designer.cs">
       <DependentUpon>frmRegistrarConsultor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClientes\frmMisCitas.resx">
+      <DependentUpon>frmMisCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultor\frmAgregarHorarios.resx">
       <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultor\frmConfirmarEliminarConsultor.resx">
       <DependentUpon>frmConfirmarEliminarConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultor\frmConsultarCitas.resx">
+      <DependentUpon>frmConsultarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultor\frmMenuConsultor.resx">
+      <DependentUpon>frmMenuConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultor\frmModificarContrasena.resx">
+      <DependentUpon>frmModificarContrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -168,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultor\frmRegistrarConsultor.resx">
       <DependentUpon>frmRegistrarConsultor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

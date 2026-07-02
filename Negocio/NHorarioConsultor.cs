@@ -1,6 +1,7 @@
 ﻿using Datos;
 using Datos.Consultores;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -62,6 +63,26 @@ namespace Negocio
             return objDatos.ListarPorConsultorYFecha(idConsultor, fecha);
         }
 
+        public IList BuscarHorariosPorFecha(DateTime fecha, int idUsuarioSesion)
+        {
+            if (idUsuarioSesion <= 0)
+            {
+                throw new ArgumentException("El ID del consultor no es válido.");
+            }
 
+            return objDatos.BuscarHorariosPorFecha(fecha, idUsuarioSesion);
+        }
+
+        public bool AtenderCita(int idHorario,int idUsuarioSesion)
+        {
+            if (idHorario <= 0)
+                throw new ArgumentException("ID de horario inválido.");
+
+            // Pasamos un ID de usuario fijo por ahora (ej. 1). 
+            // En un sistema real, aquí pasarías el ID del usuario logueado en el sistema.
+            int idUsuarioActual = 1;
+
+            return objDatos.AtenderCita(idHorario, idUsuarioActual);
+        }
     }
 }

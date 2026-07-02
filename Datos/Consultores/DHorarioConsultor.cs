@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -121,7 +122,7 @@ namespace Datos.Consultores
                               IdHorario = hc.IdHorario,
                               FechaHoraInicio = (DateTime)hc.FechaHoraInicio,
                               FechaHoraFin = (DateTime)hc.FechaHoraFin,
-                              IdEstadoHorario = hc.IdEstadoHorario, // <--- ESTO ES LO QUE FALTABA
+                              IdEstadoHorario = hc.IdEstadoHorario, 
                               NombreEstado = e.NombreEstado
                           });
 
@@ -129,9 +130,66 @@ namespace Datos.Consultores
                 return consulta.ToList();
             }
         }
+
+
+        // Usamos object o IList para poder devolver una proyección anónima limpia a la grilla
+        // Agregamos el idConsultor como parámetro obligatorio
+        public IList BuscarHorariosPorFecha(DateTime fechaSeleccionada, int idConsultor)
+        {
+            using (var db = new DBcitaproEntities()) // Reemplaza por tu DbContext
+            {
+                // Definimos el inicio y fin del día para una búsqueda segura en SQL
+                DateTime inicioDia = fechaSeleccionada.Date;
+                DateTime finDia = inicioDia.AddDays(1);
+
+                var horarios = db.HorarioConsultor
+                    .Where(h => h.IdConsultor == idConsultor && // Filtro vital
+                                h.FechaHoraInicio.HasValue &&
+                                h.FechaHoraInicio.Value >= inicioDia &&
+                                h.FechaHoraInicio.Value < finDia)
+                    .Select(h => new
+                    {
+                        IdHorario = h.IdHorario,
+                        Inicio = h.FechaHoraInicio,
+                        Fin = h.FechaHoraFin,
+                        // Ajusta "NombreEstado" según cómo se llame la propiedad en tu clase EstadoHorario
+                        Estado = h.EstadoHorario.NombreEstado,
+                        IdEstado = h.IdEstadoHorario
+                    })
+                    .ToList();
+
+                return horarios;
+            }
+        }
+
+        public bool AtenderCita(int idHorario, int idUsuarioModifica)
+        {
+            using (var db = new DBcitaproEntities())
+            {
+                try
+                {
+                    // Buscamos el horario por su Primary Key
+                    var horario = db.HorarioConsultor.FirstOrDefault(h => h.IdHorario == idHorario);
+
+                    if (horario != null)
+                    {
+                        // Suponiendo que el IdEstadoHorario = 2 significa "Atendido"
+                        horario.IdEstadoHorario = 2;
+
+                        // Actualizamos los campos de auditoría que tienes en tu clase
+                        horario.ModifiedBy = idUsuarioModifica;
+                        horario.ModifiedAt = DateTime.Now;
+
+                        db.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
     }
-
-
-
-    
 }

@@ -49,5 +49,11 @@ namespace Presentacion
 
             this.Close();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmReportes frm = new frmReportes();
+            frm.Show();
+        }
     }
 }

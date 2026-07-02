@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presentacion.frmConsultor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,25 @@ namespace Presentacion
         {
             InitializeComponent();
             idUsuarioSesion = idconsultor;
+        }
+
+        private void btnConsultarCitas_Click(object sender, EventArgs e)
+        {
+            frmConsultarCitas frm = new frmConsultarCitas(idUsuarioSesion);
+            frm.Show();
+        }
+
+        private void btnModificarContrasena_Click(object sender, EventArgs e)
+        {
+            frmModificarContrasena frm = new frmModificarContrasena();
+            frm.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            frm.Show();
+            this.Close();
         }
     }
 }
