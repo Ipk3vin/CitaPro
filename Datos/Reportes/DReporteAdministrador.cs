@@ -198,6 +198,9 @@ namespace Datos.Reportes
         // 7. Productividad comparativa de consultores
         public List<DtoProductividadComparativa> ObtenerProductividadComparativa(DateTime inicio, DateTime fin, int idConsultor, int idRubro)
         {
+            DateTime inicioBusqueda = inicio.Date;
+            DateTime finBusqueda = fin.Date.AddDays(1);
+
             using (var contexto = new DBcitaproEntities())
             {
                 var consultoresQuery = from co in contexto.Consultor
@@ -214,21 +217,22 @@ namespace Datos.Reportes
                 {
                     var citasDelConsultor = contexto.Cita
                         .Where(c => c.HorarioConsultor.IdConsultor == con.IdConsultor
-                                    && c.HorarioConsultor.FechaHoraInicio >= inicio
-                                    && c.HorarioConsultor.FechaHoraInicio <= fin)
+                                    && c.HorarioConsultor.FechaHoraInicio >= inicioBusqueda
+                                    && c.HorarioConsultor.FechaHoraInicio < finBusqueda)
                         .ToList();
 
                     var horariosDelConsultor = contexto.HorarioConsultor
                         .Count(h => h.IdConsultor == con.IdConsultor
-                                    && h.FechaHoraInicio >= inicio
-                                    && h.FechaHoraInicio <= fin);
+                                    && h.FechaHoraInicio >= inicioBusqueda
+                                    && h.FechaHoraInicio < finBusqueda);
 
                     var item = new DtoProductividadComparativa
                     {
                         NombreConsultor = con.Nombre,
-                        CitasAtendidas = citasDelConsultor.Count(c => c.Estado.NombreEstado == "Atendida"),
-                        CitasCanceladas = citasDelConsultor.Count(c => c.Estado.NombreEstado == "Cancelada"),
-                        TotalIngresos = citasDelConsultor.Where(c => c.Estado.NombreEstado == "Atendida").Sum(c => (decimal?)c.Monto) ?? 0,
+                        // CORRECCIÓN DE ESTADOS: Antes decían "Atendida" y "Cancelada"
+                        CitasAtendidas = citasDelConsultor.Count(c => c.Estado.NombreEstado == "Asistió"),
+                        CitasCanceladas = citasDelConsultor.Count(c => c.Estado.NombreEstado == "Cancelado"),
+                        TotalIngresos = citasDelConsultor.Where(c => c.Estado.NombreEstado == "Asistió").Sum(c => (decimal?)c.Monto) ?? 0,
                         TotalHorariosAsignados = horariosDelConsultor
                     };
                     resultado.Add(item);
@@ -237,5 +241,6 @@ namespace Datos.Reportes
                 return resultado;
             }
         }
+        }
     }
-}
+
