@@ -61,5 +61,21 @@ namespace Datos.dao
 
             return respuesta;
         }
+        public int ObtenerIdClientePorUsuario(int idUsuario)
+        {
+            using (var contexto = new DBcitaproEntities())
+            {
+                var lista = contexto.Cliente.Where(c => c.Usuario.Idusuario == idUsuario).ToList();
+
+                if (lista.Count > 0)
+                {
+                    return lista[0].IdCliente;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
     }
 }

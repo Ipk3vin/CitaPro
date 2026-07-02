@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NAuditoria.cs" />
+    <Compile Include="NCita.cs" />
     <Compile Include="NCliente.cs" />
     <Compile Include="NConsultor.cs" />
     <Compile Include="NHorarioConsultor.cs" />

@@ -339,7 +339,7 @@
           <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Cliente_Cita" FromRole="Cita" ToRole="Cliente" />
           <NavigationProperty Name="Estado" Relationship="Self.FK_Estado_Cita" FromRole="Cita" ToRole="Estado" />
-          <NavigationProperty Name="HorarioConsultor" Relationship="Self.FK_Horario_Cita" FromRole="Cita" ToRole="HorarioConsultor" />
+          <NavigationProperty Name="HorarioConsultor" Relationship="DBcitaproModel.FK_Horario_Cita" FromRole="Cita" ToRole="HorarioConsultor" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -368,24 +368,7 @@
           </Key>
           <Property Name="IdEstadoHorario" Type="Int32" Nullable="false" />
           <Property Name="NombreEstado" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="HorarioConsultor" Relationship="Self.FK_EstadoHorario_Horario" FromRole="EstadoHorario" ToRole="HorarioConsultor" />
-        </EntityType>
-        <EntityType Name="HorarioConsultor">
-          <Key>
-            <PropertyRef Name="IdHorario" />
-          </Key>
-          <Property Name="IdHorario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdConsultor" Type="Int32" Nullable="false" />
-          <Property Name="IdEstadoHorario" Type="Int32" Nullable="false" />
-          <Property Name="FechaHoraInicio" Type="DateTime" Precision="3" />
-          <Property Name="FechaHoraFin" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
-          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifiedBy" Type="Int32" />
-          <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Cita" Relationship="Self.FK_Horario_Cita" FromRole="HorarioConsultor" ToRole="Cita" />
-          <NavigationProperty Name="EstadoHorario" Relationship="Self.FK_EstadoHorario_Horario" FromRole="HorarioConsultor" ToRole="EstadoHorario" />
-          <NavigationProperty Name="Consultor" Relationship="DBcitaproModel.FK_Consultor_Horario" FromRole="HorarioConsultor" ToRole="Consultor" />
+          <NavigationProperty Name="HorarioConsultor" Relationship="DBcitaproModel.FK_EstadoHorario_Horario" FromRole="EstadoHorario" ToRole="HorarioConsultor" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -421,36 +404,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Horario_Cita">
-          <End Role="HorarioConsultor" Type="Self.HorarioConsultor" Multiplicity="1" />
-          <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HorarioConsultor">
-              <PropertyRef Name="IdHorario" />
-            </Principal>
-            <Dependent Role="Cita">
-              <PropertyRef Name="IdHorario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EstadoHorario_Horario">
-          <End Role="EstadoHorario" Type="Self.EstadoHorario" Multiplicity="1" />
-          <End Role="HorarioConsultor" Type="Self.HorarioConsultor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EstadoHorario">
-              <PropertyRef Name="IdEstadoHorario" />
-            </Principal>
-            <Dependent Role="HorarioConsultor">
-              <PropertyRef Name="IdEstadoHorario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DBcitaproEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cita" EntityType="Self.Cita" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
           <EntitySet Name="Estado" EntityType="Self.Estado" />
           <EntitySet Name="EstadoHorario" EntityType="Self.EstadoHorario" />
-          <EntitySet Name="HorarioConsultor" EntityType="Self.HorarioConsultor" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Cliente_Cita" Association="Self.FK_Cliente_Cita">
             <End Role="Cliente" EntitySet="Cliente" />
@@ -459,14 +417,6 @@
           <AssociationSet Name="FK_Estado_Cita" Association="Self.FK_Estado_Cita">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Cita" EntitySet="Cita" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Horario_Cita" Association="Self.FK_Horario_Cita">
-            <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
-            <End Role="Cita" EntitySet="Cita" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EstadoHorario_Horario" Association="Self.FK_EstadoHorario_Horario">
-            <End Role="EstadoHorario" EntitySet="EstadoHorario" />
-            <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
           </AssociationSet>
           <EntitySet Name="Auditoria" EntityType="DBcitaproModel.Auditoria" />
           <FunctionImport Name="sp_alterdiagram">
@@ -507,10 +457,6 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Consultor_Horario" Association="DBcitaproModel.FK_Consultor_Horario">
-            <End Role="Consultor" EntitySet="Consultor" />
-            <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
-          </AssociationSet>
           <AssociationSet Name="FK_Rubro_Consultor" Association="DBcitaproModel.FK_Rubro_Consultor">
             <End Role="Rubro" EntitySet="Rubro" />
             <End Role="Consultor" EntitySet="Consultor" />
@@ -522,6 +468,19 @@
           <AssociationSet Name="FK_TipoUsuario_Usuario" Association="DBcitaproModel.FK_TipoUsuario_Usuario">
             <End Role="TipoUsuario" EntitySet="TipoUsuario" />
             <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <EntitySet Name="HorarioConsultor" EntityType="DBcitaproModel.HorarioConsultor" />
+          <AssociationSet Name="FK_Horario_Cita" Association="DBcitaproModel.FK_Horario_Cita">
+            <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
+            <End Role="Cita" EntitySet="Cita" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consultor_Horario" Association="DBcitaproModel.FK_Consultor_Horario">
+            <End Role="Consultor" EntitySet="Consultor" />
+            <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoHorario_Horario" Association="DBcitaproModel.FK_EstadoHorario_Horario">
+            <End Role="EstadoHorario" EntitySet="EstadoHorario" />
+            <End Role="HorarioConsultor" EntitySet="HorarioConsultor" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Auditoria">
@@ -565,9 +524,9 @@
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="HorarioConsultor" Relationship="DBcitaproModel.FK_Consultor_Horario" FromRole="Consultor" ToRole="HorarioConsultor" />
           <NavigationProperty Name="Rubro" Relationship="DBcitaproModel.FK_Rubro_Consultor" FromRole="Consultor" ToRole="Rubro" />
           <NavigationProperty Name="Usuario" Relationship="DBcitaproModel.FK_Usuario_Consultor" FromRole="Consultor" ToRole="Usuario" />
+          <NavigationProperty Name="HorarioConsultor" Relationship="DBcitaproModel.FK_Consultor_Horario" FromRole="Consultor" ToRole="HorarioConsultor" />
         </EntityType>
         <EntityType Name="Rubro">
           <Key>
@@ -617,18 +576,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Consultor_Horario">
-          <End Type="DBcitaproModel.Consultor" Role="Consultor" Multiplicity="1" />
-          <End Type="DBcitaproModel.HorarioConsultor" Role="HorarioConsultor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Consultor">
-              <PropertyRef Name="IdConsultor" />
-            </Principal>
-            <Dependent Role="HorarioConsultor">
-              <PropertyRef Name="IdConsultor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Rubro_Consultor">
           <End Type="DBcitaproModel.Rubro" Role="Rubro" Multiplicity="1" />
           <End Type="DBcitaproModel.Consultor" Role="Consultor" Multiplicity="*" />
@@ -662,6 +609,59 @@
             </Principal>
             <Dependent Role="Usuario">
               <PropertyRef Name="Idtipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HorarioConsultor">
+          <Key>
+            <PropertyRef Name="IdHorario" />
+          </Key>
+          <Property Name="IdHorario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdConsultor" Type="Int32" Nullable="false" />
+          <Property Name="IdEstadoHorario" Type="Int32" Nullable="false" />
+          <Property Name="FechaHoraInicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaHoraFin" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Cita" Relationship="DBcitaproModel.FK_Horario_Cita" FromRole="HorarioConsultor" ToRole="Cita" />
+          <NavigationProperty Name="Consultor" Relationship="DBcitaproModel.FK_Consultor_Horario" FromRole="HorarioConsultor" ToRole="Consultor" />
+          <NavigationProperty Name="EstadoHorario" Relationship="DBcitaproModel.FK_EstadoHorario_Horario" FromRole="HorarioConsultor" ToRole="EstadoHorario" />
+        </EntityType>
+        <Association Name="FK_Horario_Cita">
+          <End Type="DBcitaproModel.HorarioConsultor" Role="HorarioConsultor" Multiplicity="1" />
+          <End Type="DBcitaproModel.Cita" Role="Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HorarioConsultor">
+              <PropertyRef Name="IdHorario" />
+            </Principal>
+            <Dependent Role="Cita">
+              <PropertyRef Name="IdHorario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consultor_Horario">
+          <End Type="DBcitaproModel.Consultor" Role="Consultor" Multiplicity="1" />
+          <End Type="DBcitaproModel.HorarioConsultor" Role="HorarioConsultor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consultor">
+              <PropertyRef Name="IdConsultor" />
+            </Principal>
+            <Dependent Role="HorarioConsultor">
+              <PropertyRef Name="IdConsultor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoHorario_Horario">
+          <End Type="DBcitaproModel.EstadoHorario" Role="EstadoHorario" Multiplicity="1" />
+          <End Type="DBcitaproModel.HorarioConsultor" Role="HorarioConsultor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoHorario">
+              <PropertyRef Name="IdEstadoHorario" />
+            </Principal>
+            <Dependent Role="HorarioConsultor">
+              <PropertyRef Name="IdEstadoHorario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -712,21 +712,6 @@
               <MappingFragment StoreEntitySet="EstadoHorario">
                 <ScalarProperty Name="IdEstadoHorario" ColumnName="IdEstadoHorario" />
                 <ScalarProperty Name="NombreEstado" ColumnName="NombreEstado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HorarioConsultor">
-            <EntityTypeMapping TypeName="DBcitaproModel.HorarioConsultor">
-              <MappingFragment StoreEntitySet="HorarioConsultor">
-                <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
-                <ScalarProperty Name="IdConsultor" ColumnName="IdConsultor" />
-                <ScalarProperty Name="IdEstadoHorario" ColumnName="IdEstadoHorario" />
-                <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
-                <ScalarProperty Name="FechaHoraFin" ColumnName="FechaHoraFin" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -829,6 +814,21 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Idtipo" ColumnName="Idtipo" />
                 <ScalarProperty Name="Idusuario" ColumnName="Idusuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HorarioConsultor">
+            <EntityTypeMapping TypeName="DBcitaproModel.HorarioConsultor">
+              <MappingFragment StoreEntitySet="HorarioConsultor">
+                <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="FechaHoraFin" ColumnName="FechaHoraFin" />
+                <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
+                <ScalarProperty Name="IdEstadoHorario" ColumnName="IdEstadoHorario" />
+                <ScalarProperty Name="IdConsultor" ColumnName="IdConsultor" />
+                <ScalarProperty Name="IdHorario" ColumnName="IdHorario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

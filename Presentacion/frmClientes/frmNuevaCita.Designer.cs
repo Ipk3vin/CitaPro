@@ -73,6 +73,7 @@
             this.btnReservar.TabIndex = 2;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnGuardarCita_Click);
             // 
             // dgvConsultores
             // 
@@ -81,6 +82,8 @@
             this.dgvConsultores.Name = "dgvConsultores";
             this.dgvConsultores.Size = new System.Drawing.Size(641, 107);
             this.dgvConsultores.TabIndex = 3;
+            this.dgvConsultores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultores_Click);
+            this.dgvConsultores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultores_Click);
             // 
             // dtpFecha
             // 
@@ -88,6 +91,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(198, 20);
             this.dtpFecha.TabIndex = 4;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_Click);
             // 
             // txtDescripcion
             // 

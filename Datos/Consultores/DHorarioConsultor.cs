@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,5 +100,38 @@ namespace Datos.Consultores
 
             return respuesta;
         }
+
+        public List<HorarioVista> ListarPorConsultorYFecha(int idConsultor, DateTime fecha)
+        {
+            using (var contexto = new DBcitaproEntities())
+            {
+                DateTime inicio = fecha.Date;
+                DateTime fin = inicio.AddDays(1);
+
+                // Creamos la consulta pero no la ejecutamos todavía
+                var consulta = contexto.HorarioConsultor
+                    .Where(hc => hc.IdConsultor == idConsultor
+                              && hc.FechaHoraInicio >= inicio
+                              && hc.FechaHoraInicio < fin)
+                    .Join(contexto.EstadoHorario,
+                          hc => hc.IdEstadoHorario,
+                          e => e.IdEstadoHorario,
+                          (hc, e) => new HorarioVista
+                          {
+                              IdHorario = hc.IdHorario,
+                              FechaHoraInicio = (DateTime)hc.FechaHoraInicio,
+                              FechaHoraFin = (DateTime)hc.FechaHoraFin,
+                              IdEstadoHorario = hc.IdEstadoHorario, // <--- ESTO ES LO QUE FALTABA
+                              NombreEstado = e.NombreEstado
+                          });
+
+                // Ejecutamos la consulta y devolvemos la lista al final
+                return consulta.ToList();
+            }
+        }
     }
+
+
+
+    
 }

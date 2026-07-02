@@ -31,13 +31,13 @@ namespace Datos
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<EstadoHorario> EstadoHorario { get; set; }
-        public virtual DbSet<HorarioConsultor> HorarioConsultor { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Auditoria> Auditoria { get; set; }
         public virtual DbSet<Consultor> Consultor { get; set; }
         public virtual DbSet<Rubro> Rubro { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<HorarioConsultor> HorarioConsultor { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

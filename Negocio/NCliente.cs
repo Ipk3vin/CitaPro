@@ -53,5 +53,11 @@ namespace Negocio
 
             return objDatos.RegistrarCliente(objUsuario, objCliente);
         }
+        public int ObtenerIdClientePorUsuario(int idUsuario)
+        {
+            return objDatos.ObtenerIdClientePorUsuario(idUsuario);
+        }
+
+
     }
 }

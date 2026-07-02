@@ -21,6 +21,8 @@ namespace Presentacion
 
         }
         NUsuario objUsuario = new NUsuario();
+        NCliente objNegocioCliente = new NCliente();
+
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -53,7 +55,8 @@ namespace Presentacion
             // Cliente
             else if (usuario.Idtipo == 3)
             {
-                frmMenuCliente frm = new frmMenuCliente(usuario.Idusuario);
+                int idCliente = objNegocioCliente.ObtenerIdClientePorUsuario(usuario.Idusuario);
+                frmMenuCliente frm = new frmMenuCliente(idCliente);
 
                 frm.Show();
                 this.Hide();

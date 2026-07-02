@@ -56,10 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAgregarHorarios.cs">
+    <Compile Include="frmConsultor\frmAgregarHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregarHorarios.Designer.cs">
+    <Compile Include="frmConsultor\frmAgregarHorarios.Designer.cs">
       <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAuditoria.cs">
@@ -68,10 +68,10 @@
     <Compile Include="frmAuditoria.Designer.cs">
       <DependentUpon>frmAuditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConfirmarEliminarConsultor.cs">
+    <Compile Include="frmConsultor\frmConfirmarEliminarConsultor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConfirmarEliminarConsultor.Designer.cs">
+    <Compile Include="frmConsultor\frmConfirmarEliminarConsultor.Designer.cs">
       <DependentUpon>frmConfirmarEliminarConsultor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuAdministrador.cs">
@@ -86,63 +86,63 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuCliente.cs">
+    <Compile Include="frmClientes\frmMenuCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuCliente.Designer.cs">
+    <Compile Include="frmClientes\frmMenuCliente.Designer.cs">
       <DependentUpon>frmMenuCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuConsultor.cs">
+    <Compile Include="frmConsultor\frmMenuConsultor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuConsultor.Designer.cs">
+    <Compile Include="frmConsultor\frmMenuConsultor.Designer.cs">
       <DependentUpon>frmMenuConsultor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuEditarConsultor.cs">
+    <Compile Include="frmConsultor\frmMenuEditarConsultor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuEditarConsultor.Designer.cs">
+    <Compile Include="frmConsultor\frmMenuEditarConsultor.Designer.cs">
       <DependentUpon>frmMenuEditarConsultor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuEditarDatosConsultor.cs">
+    <Compile Include="frmConsultor\frmMenuEditarDatosConsultor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuEditarDatosConsultor.Designer.cs">
+    <Compile Include="frmConsultor\frmMenuEditarDatosConsultor.Designer.cs">
       <DependentUpon>frmMenuEditarDatosConsultor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMisCitas.cs">
+    <Compile Include="frmClientes\frmMisCitas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMisCitas.Designer.cs">
+    <Compile Include="frmClientes\frmMisCitas.Designer.cs">
       <DependentUpon>frmMisCitas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevaCita.cs">
+    <Compile Include="frmClientes\frmNuevaCita.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNuevaCita.Designer.cs">
+    <Compile Include="frmClientes\frmNuevaCita.Designer.cs">
       <DependentUpon>frmNuevaCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrarCliente.cs">
+    <Compile Include="frmClientes\frmRegistrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrarCliente.Designer.cs">
+    <Compile Include="frmClientes\frmRegistrarCliente.Designer.cs">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrarConsultor.cs">
+    <Compile Include="frmConsultor\frmRegistrarConsultor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrarConsultor.Designer.cs">
+    <Compile Include="frmConsultor\frmRegistrarConsultor.Designer.cs">
       <DependentUpon>frmRegistrarConsultor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAgregarHorarios.resx">
+    <EmbeddedResource Include="frmConsultor\frmAgregarHorarios.resx">
       <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAuditoria.resx">
       <DependentUpon>frmAuditoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConfirmarEliminarConsultor.resx">
+    <EmbeddedResource Include="frmConsultor\frmConfirmarEliminarConsultor.resx">
       <DependentUpon>frmConfirmarEliminarConsultor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -151,22 +151,22 @@
     <EmbeddedResource Include="frmMenuAdministrador.resx">
       <DependentUpon>frmMenuAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuCliente.resx">
+    <EmbeddedResource Include="frmClientes\frmMenuCliente.resx">
       <DependentUpon>frmMenuCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuEditarConsultor.resx">
+    <EmbeddedResource Include="frmConsultor\frmMenuEditarConsultor.resx">
       <DependentUpon>frmMenuEditarConsultor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuEditarDatosConsultor.resx">
+    <EmbeddedResource Include="frmConsultor\frmMenuEditarDatosConsultor.resx">
       <DependentUpon>frmMenuEditarDatosConsultor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevaCita.resx">
+    <EmbeddedResource Include="frmClientes\frmNuevaCita.resx">
       <DependentUpon>frmNuevaCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarCliente.resx">
+    <EmbeddedResource Include="frmClientes\frmRegistrarCliente.resx">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarConsultor.resx">
+    <EmbeddedResource Include="frmConsultor\frmRegistrarConsultor.resx">
       <DependentUpon>frmRegistrarConsultor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

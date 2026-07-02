@@ -2,6 +2,7 @@
 using Datos.Consultores;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,5 +56,12 @@ namespace Negocio
                 idUsuarioSesion
             );
         }
+
+        public List<HorarioVista> ListarPorConsultorYFecha(int idConsultor, DateTime fecha)
+        {
+            return objDatos.ListarPorConsultorYFecha(idConsultor, fecha);
+        }
+
+
     }
 }

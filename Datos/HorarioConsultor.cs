@@ -32,7 +32,7 @@ namespace Datos
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cita> Cita { get; set; }
-        public virtual EstadoHorario EstadoHorario { get; set; }
         public virtual Consultor Consultor { get; set; }
+        public virtual EstadoHorario EstadoHorario { get; set; }
     }
 }

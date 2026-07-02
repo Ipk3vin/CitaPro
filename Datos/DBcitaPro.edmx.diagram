@@ -9,22 +9,22 @@
         <EntityTypeShape EntityType="DBcitaproModel.Cliente" Width="1.5" PointX="5.5" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="DBcitaproModel.Estado" Width="1.5" PointX="10.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="DBcitaproModel.EstadoHorario" Width="1.5" PointX="8.625" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBcitaproModel.HorarioConsultor" Width="1.5" PointX="8.5" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBcitaproModel.sysdiagrams" Width="1.5" PointX="17.25" PointY="12.625" IsExpanded="true" />
         <AssociationConnector Association="DBcitaproModel.FK_Cliente_Cita" ManuallyRouted="false" />
         <AssociationConnector Association="DBcitaproModel.FK_Estado_Cita" ManuallyRouted="false" />
-        <AssociationConnector Association="DBcitaproModel.FK_Horario_Cita" ManuallyRouted="false" />
-        <AssociationConnector Association="DBcitaproModel.FK_EstadoHorario_Horario" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DBcitaproModel.Auditoria" Width="1.5" PointX="3" PointY="1.25" />
         <EntityTypeShape EntityType="DBcitaproModel.Consultor" Width="1.5" PointX="6.25" PointY="12" />
         <EntityTypeShape EntityType="DBcitaproModel.Rubro" Width="1.5" PointX="4" PointY="13" />
         <EntityTypeShape EntityType="DBcitaproModel.TipoUsuario" Width="1.5" PointX="1" PointY="9" />
         <EntityTypeShape EntityType="DBcitaproModel.Usuario" Width="1.5" PointX="3.25" PointY="7.875" />
         <AssociationConnector Association="DBcitaproModel.FK_Usuario_Cliente" />
-        <AssociationConnector Association="DBcitaproModel.FK_Consultor_Horario" />
         <AssociationConnector Association="DBcitaproModel.FK_Rubro_Consultor" />
         <AssociationConnector Association="DBcitaproModel.FK_Usuario_Consultor" />
         <AssociationConnector Association="DBcitaproModel.FK_TipoUsuario_Usuario" />
+        <EntityTypeShape EntityType="DBcitaproModel.HorarioConsultor" Width="1.5" PointX="8.5" PointY="3.375" />
+        <AssociationConnector Association="DBcitaproModel.FK_Horario_Cita" />
+        <AssociationConnector Association="DBcitaproModel.FK_Consultor_Horario" />
+        <AssociationConnector Association="DBcitaproModel.FK_EstadoHorario_Horario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
