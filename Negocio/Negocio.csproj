@@ -57,6 +57,7 @@
     <Compile Include="NConsultor.cs" />
     <Compile Include="NHorarioConsultor.cs" />
     <Compile Include="NReporteAdministrador.cs" />
+    <Compile Include="NReportesConsultor.cs" />
     <Compile Include="NUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

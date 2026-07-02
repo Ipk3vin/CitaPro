@@ -38,5 +38,12 @@ namespace Presentacion
             frm.Show();
             this.Close();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmReportesConsultor frm = new frmReportesConsultor(idUsuarioSesion);
+            frm.Show();
+            this.Close();
+        }
     }
 }
