@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Datos.Clientes;
 using Datos.dao;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Negocio
     public class NCliente
     {
         DClientes objDatos = new DClientes();
+        DCita citaDatos = new DCita(); 
 
         public string RegistrarCliente(Usuario objUsuario, Cliente objCliente)
         {
@@ -56,6 +58,16 @@ namespace Negocio
         public int ObtenerIdClientePorUsuario(int idUsuario)
         {
             return objDatos.ObtenerIdClientePorUsuario(idUsuario);
+        }
+
+        public List<Citas> ObtenerCitas()
+        {
+            return citaDatos.ListarCitas();
+        }
+
+        public void CancelarCita(int idCita)
+        {
+            citaDatos.CancelarCita(idCita);
         }
 
 

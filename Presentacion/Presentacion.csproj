@@ -136,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClientes\frmMisCitas.resx">
+      <DependentUpon>frmMisCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultor\frmAgregarHorarios.resx">
       <DependentUpon>frmAgregarHorarios.cs</DependentUpon>
     </EmbeddedResource>
